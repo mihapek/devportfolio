@@ -16,12 +16,17 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 
   constructor(public portfolioService: PortfolioService,
     private renderer: Renderer2) { 
-      this.changeTheme(this.currentTheme);
+      this.changeTheme();
     }
 
-    changeTheme(theme: string){
+    changeTheme(){
+      let theme = this.currentTheme;
       this.renderer.removeClass(document.body,this.currentTheme);
-      this.currentTheme = theme;
+      let index = this.themes.indexOf(theme) + 1;
+      if(index === this.themes.length){
+        index = 0;
+      }
+      this.currentTheme = this.themes[index];
       this.renderer.addClass(document.body,this.currentTheme);
     }
 

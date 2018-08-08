@@ -17,11 +17,10 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#others">Others</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#" (click)="changeTheme()">Theme: <span class="capitalize">{{currentTheme}} > </span></a>
+        </li>
       </ul>
-
-      <select class="theme-selector" id="theme" required (change)="changeTheme($event.target.value)">
-        <option *ngFor="let theme of themes" [value]="theme">{{theme}}</option>
-      </select>
 
     </div>
   </div>
@@ -85,7 +84,7 @@
       <h1>Others</h1>
     </div>
   </div>
-</section>
+</section>    
 <section *ngFor="let item of portfolioService.others; let even=even" [ngClass]="{'bg-light':even}" id="item.key">
   <div class="container">
     <div class="row">
