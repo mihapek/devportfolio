@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'node_modules/bootstrap/scss/bootstrap.scss'; 
+@import "nerd-theme";
+@import "playground-theme";
 
 body {
   background-color: black;
@@ -13,15 +15,18 @@ header {
   padding: 100px 0 50px;
 }
 
-@media (min-width: 992px) {
-  header {
-    padding: 100px 0 50px;
-  }
-}
-
 section {
   padding: 50px 0;
 }
+
+.theme-selector {
+  width: 100px;
+  background-color: transparent;
+  border-width: 0ch;
+  color: rgba(255,255,255,.5);
+}
+
+
 
 .dlabel {
   margin-right: 5px;
