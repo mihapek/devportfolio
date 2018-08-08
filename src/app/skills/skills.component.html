@@ -1,0 +1,14 @@
+<div *ngFor="let skillType of portfolioService.skillTypes">
+    <h3 class="capitalize" style="margin-top: 20px;">{{skillType}}</h3>
+
+    <span *ngFor="let skill of portfolioService.getSkills(skillType)">
+      <ng-template #popContent>
+        projects: {{skill.count}}<br/>
+        months: {{skill.months}}<br/>
+        last job: {{skill.lastJob | date}}<br/>
+      </ng-template>
+      <button type="button" class="btn btn-primary dlabel" [ngbPopover]="popContent" popoverTitle="{{skill.name}}">
+        {{skill.name}} <img src="{{getIconPath(skill.months)}}" height="20" width="20" alt="months: {{skill.months}}"/>
+      </button>
+    </span>
+  </div>

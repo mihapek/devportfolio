@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: black;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  padding: 100px 0 50px;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 100px 0 50px;
+  }
+}
+
+section {
+  padding: 50px 0;
+}
+
+.dlabel {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.skill {
+  font-size: medium;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
