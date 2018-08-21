@@ -1,22 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Skill } from './skills/skill.structure';
-
+import { Injectable } from "@angular/core";
+import { Skill } from "./skills/skill.structure";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class PortfolioService {
-
   private skills = {};
   private others = [];
   private personOthers = [];
 
-  public skillTypes = ['languages', "frameworks", "tools"];
-
+  public skillTypes = ["languages", "frameworks", "tools"];
 
   constructor() {
     console.log("Load PortfolioService");
-
 
     for (let skillType of this.skillTypes) {
       let skillMap = this.computeSkills(skillType);
@@ -29,19 +25,15 @@ export class PortfolioService {
     }
 
     for (let key in this.portfolio.others) {
-      this.others.push({ "key": key, "value": this.portfolio.others[key] });
+      this.others.push({ key: key, value: this.portfolio.others[key] });
     }
 
     for (let key in this.portfolio.person.others) {
-      this.personOthers.push({ "key": key, "value": this.portfolio.person.others[key] });
+      this.personOthers.push({ key: key, value: this.portfolio.person.others[key] });
     }
-
   }
 
-
-
   public getSkills(skillType: string) {
-
     return this.skills[skillType];
   }
 
@@ -92,51 +84,53 @@ export class PortfolioService {
     return lastDate;
   }
 
-
   public portfolio = {
-    "person": {
-      "name": "Alan Greenberg",
-      "foto": "assets/images/avatar/avatar-white.png",
-      "motto": "Unus pro omnibus, omnes pro uno",
-      "others": {
-        "dob": "1972-02-30 in Santiago de Cuba",
+    person: {
+      name: "Alan Greenberg",
+      foto: "assets/images/avatar/avatar-white.png",
+      motto: "Unus pro omnibus, omnes pro uno",
+      others: {
+        dob: "1972-02-30 in Santiago de Cuba",
         "civil status": "single",
-        "languages": "English, Spanish, Chinese"
+        languages: "English, Spanish, Chinese"
       }
     },
-    "projects": [
+    projects: [
       {
-        "name": "One project that I was done",
-        "description": "Lorem <b>ipsum</b> dolor <i>sit amet</i>, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "fromDate": "2017-02-01",
-        "toDate": "2018-04-15",
-        "languages": [{ "name": "java", "version": "1.8" }, "html", "sql"],
-        "frameworks": ["spring", { "name": "spring boot", "version": "1" }],
-        "tools": ["eclipse", "dbeaver", "jira", "bitbucket", "git", "jenkins", "mvn", "mysql"]
+        name: "One project that I was done",
+        description:
+          "Lorem <b>ipsum</b> dolor <i>sit amet</i>, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        fromDate: "2017-02-01",
+        toDate: "2018-04-15",
+        languages: [{ name: "java", version: "1.8" }, "html", "sql"],
+        frameworks: ["spring", { name: "spring boot", version: "1" }],
+        tools: ["eclipse", "dbeaver", "jira", "bitbucket", "git", "jenkins", "mvn", "mysql"]
       },
       {
-        "name": "Second project that I was done too",
-        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "fromDate": "2018-03-01",
-        "toDate": "2018-03-31",
-        "languages": ["java", "html", "sql"],
-        "frameworks": ["spring"],
-        "tools": ["eclipse", "dbeaver", "svn", "jenkins", "ant", "oracle"]
+        name: "Second project that I was done too",
+        description:
+          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        fromDate: "2018-03-01",
+        toDate: "2018-03-31",
+        languages: ["java", "html", "sql"],
+        frameworks: ["spring"],
+        tools: ["eclipse", "dbeaver", "svn", "jenkins", "ant", "oracle"]
       },
       {
-        "name": "33333 project that I was done too",
-        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "fromDate": "2011-11-01",
-        "toDate": "2017-01-31",
-        "languages": [{ "name": "java", "version": "1.6" }, "groovy"],
-        "frameworks": ["struts"],
-        "tools": ["eclipse", "svn", "jenkins", "gradle", "oracle"]
+        name: "33333 project that I was done too",
+        description:
+          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        fromDate: "2011-11-01",
+        toDate: "2017-01-31",
+        languages: [{ name: "java", version: "1.6" }, "groovy"],
+        frameworks: ["struts"],
+        tools: ["eclipse", "svn", "jenkins", "gradle", "oracle"]
       }
     ],
-    "others": {
-      "Hobby": "<ul><li>First hobby</li><li>Second hobby</li></ul>",
-      "Certificates": "<ul><li>First certificate</li><li>Second certificate</li></ul>"
-    }
+    others: {
+      Hobby: "<ul><li>First hobby</li><li>Second hobby</li></ul>",
+      Certificates: "<ul><li>First certificate</li><li>Second certificate</li></ul>"
+    },
+    copyright: "Greenberg 2018"
   };
-
 }
