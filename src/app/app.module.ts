@@ -7,13 +7,15 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectComponent } from './project/project.component';
 import { SkillsComponent } from './skills/skills.component';
 import { LabelsComponent } from './labels/labels.component';
+import { MainSectionComponent } from './main-section/main-section.component';
 
 @NgModule({
   declarations: [
     PortfolioComponent,
     SkillsComponent,
     ProjectComponent,
-    LabelsComponent
+    LabelsComponent,
+    MainSectionComponent
   ],
   imports: [
     BrowserModule,

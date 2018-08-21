@@ -1,4 +1,4 @@
-@import 'node_modules/bootstrap/scss/bootstrap.scss'; 
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "nerd-theme";
 @import "playground-theme";
 
@@ -16,9 +16,8 @@ header {
 }
 
 section {
-  padding: 50px 0;
+  padding: 25px 0;
 }
-
 
 .dlabel {
   margin-right: 5px;

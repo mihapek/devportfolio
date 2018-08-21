@@ -18,7 +18,8 @@
           <a class="nav-link js-scroll-trigger" href="#others">Others</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#" (click)="changeTheme()">Theme: <span class="capitalize">{{currentTheme}} > </span></a>
+          <a class="nav-link js-scroll-trigger" href="#" (click)="changeTheme()">Theme: <span class="capitalize">{{currentTheme}}
+              > </span></a>
         </li>
       </ul>
 
@@ -52,8 +53,7 @@
     </div>
   </div>
 </header>
-<section>
-</section>
+
 <section id="skills" class="main-section">
   <div class="row">
     <div class="col-lg-8 mx-auto">
@@ -84,7 +84,7 @@
       <h1>Others</h1>
     </div>
   </div>
-</section>    
+</section>
 <section *ngFor="let item of portfolioService.others; let even=even" [ngClass]="{'bg-light':even}" id="item.key">
   <div class="container">
     <div class="row">
