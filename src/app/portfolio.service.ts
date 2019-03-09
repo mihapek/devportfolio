@@ -29,7 +29,10 @@ export class PortfolioService {
     }
 
     for (let key in this.portfolio.person.others) {
-      this.personOthers.push({ key: key, value: this.portfolio.person.others[key] });
+      this.personOthers.push({
+        key: key,
+        value: this.portfolio.person.others[key]
+      });
     }
   }
 
@@ -104,7 +107,16 @@ export class PortfolioService {
         toDate: "2018-04-15",
         languages: [{ name: "java", version: "1.8" }, "html", "sql"],
         frameworks: ["spring", { name: "spring boot", version: "1" }],
-        tools: ["eclipse", "dbeaver", "jira", "bitbucket", "git", "jenkins", "mvn", "mysql"]
+        tools: [
+          "eclipse",
+          "dbeaver",
+          "jira",
+          "bitbucket",
+          "git",
+          "jenkins",
+          "mvn",
+          "mysql"
+        ]
       },
       {
         name: "Second project that I was done too",
@@ -129,7 +141,8 @@ export class PortfolioService {
     ],
     others: {
       Hobby: "<ul><li>First hobby</li><li>Second hobby</li></ul>",
-      Certificates: "<ul><li>First certificate</li><li>Second certificate</li></ul>"
+      Certificates:
+        "<ul><li>First certificate</li><li>Second certificate</li></ul>"
     },
     copyright: "Greenberg 2018"
   };
