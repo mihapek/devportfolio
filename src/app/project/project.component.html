@@ -1,37 +1,23 @@
-
 <div class="container">
   <div class="row">
     <div class="col-lg-8 mx-auto">
-      <h2>{{project.name}}</h2>
+      <h2>{{ project.name }}</h2>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-8 mx-auto">
-    	<h6>{{getDuration()}}</h6>
+      <h6>{{ getDuration() }}</h6>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-8 mx-auto">
-	  <p class="lead" [innerHTML]="project.description"></p>
+      <p class="lead" [innerHTML]="project.description"></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-8 mx-auto">
-	  Programming languages: <labels [values]="project.languages"></labels>
+      <labels [values]="project.skills"></labels>
     </div>
   </div>
-  
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-	  Frameworks: <labels [values]="project.frameworks"></labels>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-	  Tools: <labels [values]="project.tools"></labels>
-    </div>
-  </div>
-
 </div>

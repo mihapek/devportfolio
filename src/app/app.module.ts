@@ -9,9 +9,11 @@ import { SkillsComponent } from "./skills/skills.component";
 import { LabelsComponent } from "./labels/labels.component";
 import { MainSectionComponent } from "./main-section/main-section.component";
 
+import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [PortfolioComponent, SkillsComponent, ProjectComponent, LabelsComponent, MainSectionComponent],
-  imports: [BrowserModule, NgbModule.forRoot()],
+  imports: [BrowserModule, HttpClientModule, NgbModule.forRoot()],
   providers: [],
   bootstrap: [PortfolioComponent]
 })
