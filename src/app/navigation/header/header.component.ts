@@ -33,4 +33,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.renderer.removeClass(document.body, "nerd");
     this.renderer.removeClass(document.body, "classic");
   }
+
+  onToggleSidenav() {
+    console.log("not implimented");
+  }
 }

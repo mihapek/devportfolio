@@ -11,7 +11,7 @@ export class ProjectComponent {
 
   constructor() {}
 
-  private getDuration() {
+  getDuration() {
     if (this.project.fromDate) {
       let fromDate = Date.parse(this.project.fromDate);
       let toDate = Date.now();
@@ -27,7 +27,7 @@ export class ProjectComponent {
     }
   }
 
-  private formatDate(timems: number) {
+  formatDate(timems: number) {
     const date = new Date(timems);
     return date.getFullYear() + "/" + (date.getMonth() + 1);
   }
