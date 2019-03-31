@@ -1,28 +1,20 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-
+import { Component, Input, ViewEncapsulation } from "@angular/core";
 
 @Component({
-  selector: 'labels',
+  selector: "labels",
   template: `
-    <span class="badge badge-success dlabel" *ngFor="let value of values">{{printLabel(value)}}
-		<span class="badge badge-light" *ngIf="value.version">{{value.version}}</span>
-	</span>
-    `
+    <span class="badge badge-success dlabel" *ngFor="let value of values"
+      >{{ printLabel(value) }}
+      <span class="badge badge-light" *ngIf="value.version">{{ value.version }}</span>
+    </span>
+  `
 })
-
 export class LabelsComponent {
+  @Input() values;
 
-	@Input() values;
+  constructor() {}
 
-  constructor() { 
-    console.log("Load LabelsComponent");
+  private printLabel(value) {
+    return value.name ? value.name : value;
   }
-
-
-	private printLabel(value){
-		return value.name ? value.name : value;
-	}
-
 }
-
-

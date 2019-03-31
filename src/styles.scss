@@ -27,3 +27,35 @@ section {
 .capitalize {
   text-transform: capitalize;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .col {
+    margin-right: 5px;
+  }
+}
+
+button.skill-button {
+  margin: 5px;
+}
+
+.skills-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.filtered-skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .skill-card {
+    margin: 5px;
+  }
+}

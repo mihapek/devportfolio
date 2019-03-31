@@ -1,0 +1,14 @@
+.person {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+
+  .personMeta {
+    width: 300px;
+  }
+}
+
+.bg-light {
+  background-color: #00000007;
+}

@@ -1,12 +1,33 @@
-<div *ngFor="let skillType of portfolioService.skillTypes">
-  <span *ngFor="let skill of portfolioService.getSkills(skillType)">
-    <ng-template #popContent>
-      projects: {{ skill.count }}<br />
-      months: {{ skill.months }}<br />
-      last job: {{ skill.lastJob | date }}<br />
-    </ng-template>
-    <button type="button" class="btn btn-primary dlabel" [ngbPopover]="popContent" popoverTitle="{{ skill.name }}">
+<div class="skills-area">
+  <div *ngFor="let skill of getSkills()">
+    <button *ngIf="!skill.activated" class="skill-button" mat-stroked-button color="primary" (click)="addSkillToFilter(skill)">
       {{ skill.name }} <img src="{{ getIconPath(skill.months) }}" height="20" width="20" alt="months: {{ skill.months }}" />
     </button>
-  </span>
+    <button *ngIf="skill.activated" class="skill-button" mat-raised-button color="primary" (click)="removeSkillFromFilter(skill)">
+      {{ skill.name }} <img src="{{ getIconPath(skill.months) }}" height="20" width="20" alt="months: {{ skill.months }}" />
+    </button>
+  </div>
+  <div>
+    <button class="deactivate-all-skills" mat-mini-fab color="warn" (click)="deactivateAllSkills()" [disabled]="activatedSkills.length == 0">X</button>
+  </div>
+</div>
+
+<div class="main-section" *ngIf="activatedSkills.length != 0">
+  <h1>Filtered by</h1>
+</div>
+
+<div class="filtered-skills">
+  <div *ngFor="let skill of activatedSkills" class="skill-card">
+    <mat-card class="skill-card" color="primary">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ skill.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        projects: {{ skill.count }}<br />
+        months: {{ skill.months }}<br />
+        last job: {{ skill.lastJob | date }}<br />
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

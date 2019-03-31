@@ -230,7 +230,7 @@
       "description": "In Folge des Bologna-Prozesses, bei der Umstellung der Studiengänge von Diplom auf Bachelor & Master, wurde an der TU-Braunschweig ein Web-Portal für die Erstellung und Verwaltung der Modulhandbücher entwickelt. In diesem Portal werden die Module von den Institutsmitarbeitern gepflegt. Die Studiengagnsverantwortlichen sind zuständig für das Zusammenstellen der Module zu einem Gesamtstudiengang. Für Studierende wird hierdurch ein Modulhandbuch für ihren Studiengang in elektronische Form vom System bereitgestellt. Das Portal wurde um weitere Schnittstellen zur StudIP und HIS erweitert.",
       "fromDate": "2005-09-01",
       "toDate": "2008-09-30",
-      "skills": ["Java", "Struts", "Tiles", "Tapestry", "Eclipse", "HTML", "JavaScript", "StudIP", "HISinOne", "Agile", "CAS", "Spring", "Ant"]
+      "skills": ["Agile", "Java"]
     }
   ],
   "others": {
