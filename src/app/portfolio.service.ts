@@ -1,11 +1,11 @@
-import { Injectable, OnInit } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Skill } from "./skills/skill.structure";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
 })
-export class PortfolioService implements OnInit {
+export class PortfolioService {
   private skills = {};
   private others = [];
   private personOthers = [];
@@ -35,14 +35,15 @@ export class PortfolioService implements OnInit {
         }
 
         for (let key in this.portfolio.person.others) {
-          this.personOthers.push({ key: key, value: this.portfolio.person.others[key] });
+          this.personOthers.push({
+            key: key,
+            value: this.portfolio.person.others[key]
+          });
         }
       },
       error => console.log(error)
     );
   }
-
-  ngOnInit(): void {}
 
   public getSkills(skillType: string) {
     return this.skills[skillType];

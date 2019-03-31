@@ -1,6 +1,7 @@
 @import "nerd-theme";
 @import "playground-theme";
-@import "~bootstrap/scss/bootstrap.scss";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import "~bootstrap/scss/bootstrap.scss";*/
 
 * {
   -webkit-font-smoothing: antialiased;
