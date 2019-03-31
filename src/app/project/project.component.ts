@@ -21,7 +21,7 @@ export class ProjectComponent {
       let timeDiff = Math.abs(toDate - fromDate);
       let diffMonths = Math.ceil(timeDiff / (1000 * 3600 * 24 * 30));
 
-      return this.formatDate(fromDate) + " - " + (this.project.toDate ? this.formatDate(toDate) : "now") + " (" + diffMonths + " months)";
+      return this.formatDate(fromDate) + " - " + (this.project.toDate ? this.formatDate(toDate) : "now") + " (" + diffMonths + ")";
     } else {
       return "---";
     }

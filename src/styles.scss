@@ -2,7 +2,6 @@
 @import "playground-theme";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,7 +10,6 @@
 header {
   padding: 100px 0 50px;
 }
-
 
 .capitalize {
   text-transform: capitalize;
@@ -27,8 +25,25 @@ header {
   }
 }
 
+.main-content {
+  margin: 0 20px 0 20px;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -75px;
+  visibility: hidden;
+}
+
 button.skill-button {
   margin: 5px;
+}
+
+button.skill-button {
+  g paht {
+    fill: yellow;
+  }
 }
 
 .person {
@@ -39,6 +54,10 @@ button.skill-button {
 
   .personMeta {
     width: 350px;
+  }
+
+  img {
+    max-width: 400px;
   }
 }
 

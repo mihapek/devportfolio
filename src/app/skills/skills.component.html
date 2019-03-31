@@ -1,10 +1,10 @@
 <div class="skills-area">
   <div *ngFor="let skill of getSkills()">
-    <button *ngIf="!skill.activated" class="skill-button" mat-stroked-button color="primary" (click)="addSkillToFilter(skill)">
-      {{ skill.name }} <img src="{{ getIconPath(skill.months) }}" height="20" width="20" alt="months: {{ skill.months }}" />
+    <button *ngIf="!skill.activated" class="skill-button not-activated" mat-stroked-button color="primary" (click)="addSkillToFilter(skill)">
+      {{ skill.name }} <img src="{{ getIconPath(skill.months) }}-na.svg" height="20" width="20" alt="months: {{ skill.months }}" />
     </button>
-    <button *ngIf="skill.activated" class="skill-button" mat-raised-button color="primary" (click)="removeSkillFromFilter(skill)">
-      {{ skill.name }} <img src="{{ getIconPath(skill.months) }}" height="20" width="20" alt="months: {{ skill.months }}" />
+    <button *ngIf="skill.activated" class="skill-button activated" mat-raised-button color="primary" (click)="removeSkillFromFilter(skill)">
+      {{ skill.name }} <img src="{{ getIconPath(skill.months) }}.svg" height="20" width="20" alt="months: {{ skill.months }}" />
     </button>
   </div>
   <div>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="main-section" *ngIf="activatedSkills.length != 0">
-  <h1>Filtered by</h1>
+  <h1>{{ messages["filtered-by"] }}</h1>
 </div>
 
 <div class="filtered-skills">
@@ -24,9 +24,9 @@
         <mat-card-title>{{ skill.name }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        projects: {{ skill.count }}<br />
-        months: {{ skill.months }}<br />
-        last job: {{ skill.lastJob | date }}<br />
+        {{ messages["projects"] }}: {{ skill.count }}<br />
+        {{ messages["months"] }}: {{ skill.months }}<br />
+        {{ messages["last-job-date"] }}: {{ skill.lastJob | date }}<br />
       </mat-card-content>
     </mat-card>
   </div>

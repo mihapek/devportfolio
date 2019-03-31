@@ -28,6 +28,7 @@ export class PortfolioService {
           for (let skill in skillMap) {
             this.skills.push(skillMap[skill]);
           }
+          this.skills.sort((a, b) => b.months - a.months);
 
           for (let key in this.portfolio.others) {
             this.others.push({ key: key, value: this.portfolio.others[key] });

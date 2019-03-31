@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div *ngIf="portfolioService.portfolio; else loading">
+<div *ngIf="portfolioService.portfolio; else loading" class="main-content">
   <header class="" id="page-top">
     <div class="container">
       <div class="row person">
@@ -27,7 +27,8 @@
     </div>
   </header>
 
-  <div id="skills" class="main-section">
+  <div class="main-section">
+    <div id="skills" class="anchor"></div>
     <h1>{{ messages["skills"] }}</h1>
   </div>
 
@@ -35,8 +36,9 @@
     <skills (filteredSkills)="filterProjects($event)"></skills>
   </div>
 
-  <div id="projects" class="main-section">
-    <h1>{{ messages["projects"] }}</h1>
+  <div class="main-section">
+    <div id="projects" class="anchor"></div>
+    <h1>{{ messages["projects"] }} ({{ filteredProjects.length }})</h1>
     <div *ngIf="filteredProjects.length == 0">{{ messages["no-projects"] }}</div>
   </div>
 
@@ -45,6 +47,7 @@
   </div>
 
   <div id="others" class="main-section">
+    <div id="others" class="anchor"></div>
     <h1>{{ messages["other"] }}</h1>
   </div>
 

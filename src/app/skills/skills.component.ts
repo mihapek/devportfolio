@@ -11,6 +11,7 @@ import { Skill } from "./skill.structure";
 export class SkillsComponent implements OnInit {
   activatedSkills: Skill[] = [];
   skills: Skill[] = [];
+  messages = {};
 
   @Output() filteredSkills: EventEmitter<Skill[]> = new EventEmitter();
 
@@ -18,13 +19,10 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.skills = this.portfolioService.getSkills();
+    this.portfolioService.getMessages().subscribe(messages => (this.messages = messages));
   }
 
-  icons = [
-    { to: 6, src: "assets/images/skills/junior.svg" },
-    { to: 30, src: "assets/images/skills/minior.svg" },
-    { to: 9999, src: "assets/images/skills/senior.svg" }
-  ];
+  icons = [{ to: 6, src: "assets/images/skills/junior" }, { to: 30, src: "assets/images/skills/minior" }, { to: 9999, src: "assets/images/skills/senior" }];
 
   private getIconPath(months: number) {
     for (let item of this.icons) {

@@ -1,7 +1,7 @@
 {
   "person": {
     "name": "Mark Stein",
-    "foto": "assets/images/avatar/avatar-white.png",
+    "foto": "assets/images/avatar/Profile-Mark.png",
     "motto": "Unus pro omnibus, omnes pro uno",
     "others": {
       "Geburt": "1979 in Stachanov (SSSR)",
@@ -37,7 +37,7 @@
       "toDate": "2018-06-30",
       "skills": [
         { "name": "Java", "version": "8" },
-        "Spring Boot",
+        "Spring-Boot",
         { "name": "Vaadin", "version": "8", "note": "for administration" },
         "Eclipse",
         "Maven",
