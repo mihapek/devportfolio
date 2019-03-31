@@ -37,7 +37,7 @@
 
   <div id="projects" class="main-section">
     <h1>Projects</h1>
-    <div *ngIf="filteredProjects.length == 0">no projects</div>
+    <div *ngIf="filteredProjects.length == 0">no projects for all selected skills</div>
   </div>
 
   <div *ngFor="let project of filteredProjects; let even = even" [ngClass]="{ 'bg-light': even }">

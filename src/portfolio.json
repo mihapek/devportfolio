@@ -17,7 +17,7 @@
       "description": "Migration der EDV-Systeme für die Stammdaten- und Kundenverwaltung von legacy Fat-Clients auf moderne webbasierte Technologie.",
       "fromDate": "2018-06-01",
       "toDate": "",
-      "skills": [{ "name": "Angular", "version": "6" }, "JSP", "LDAP", { "name": "Java", "version": "8" }, "Eclipse", "VS-Code", "SVN", "Jira", "Ant", "mvn"]
+      "skills": [{ "name": "Angular", "version": "6" }, "JSP", "LDAP", { "name": "Java", "version": "8" }, "Eclipse", "VS-Code", "SVN", "Jira", "Ant", "Maven"]
     },
     {
       "name": "Migration Vaadin 7 auf Vaadin 8",
@@ -26,7 +26,7 @@
       "description": "Migration eines bestehendes EDV Systems im Bereich medizinische Stammdatenverwaltung von Vaadin 7 auf Vaadin 8. Dabei soll eine legacy UI auf Responsive Webdesign umgestellt werden.",
       "fromDate": "2018-09-01",
       "toDate": "2018-12-31",
-      "skills": [{ "name": "Vaadin", "version": "7" }, { "name": "Vaadin", "version": "8" }, "SCSS", "Sass", "Eclipse", "PostgreSQL", "Ant", "SVN", "git"]
+      "skills": [{ "name": "Vaadin", "version": "7" }, { "name": "Vaadin", "version": "8" }, "SCSS", "Sass", "Eclipse", "PostgreSQL", "Ant", "SVN", "Git"]
     },
     {
       "name": "FitterYOU - Dein Personal Trainer: Fitness-App",
@@ -40,8 +40,8 @@
         "Spring Boot",
         { "name": "Vaadin", "version": "8", "note": "for administration" },
         "Eclipse",
-        "mvn",
-        "git",
+        "Maven",
+        "Git",
         "Jira",
         "Jenkins",
         "Selenium",
@@ -76,14 +76,14 @@
         "Selenium",
         "Mockito",
         "Gradle",
-        "mvn",
+        "Maven",
         "Groovy",
         "Scrum",
         "Eclipse",
         "DBeaver",
         "Swagger",
         "SVN",
-        "git"
+        "Git"
       ]
     },
     {
@@ -111,7 +111,7 @@
       "description": "Technische Konzeption und Entwicklung der Internationalisierung",
       "fromDate": "2015-12-01",
       "toDate": "2016-11-30",
-      "skills": ["Selenium", "Gradle", "JUnit", "Mockito", "Java", "Oracle", "AngularJS", "grunt", "Ant", "Sass", "SVN", "git", "Eclipse"]
+      "skills": ["Selenium", "Gradle", "JUnit", "Mockito", "Java", "Oracle", "AngularJS", "grunt", "Ant", "Sass", "SVN", "Git", "Eclipse"]
     },
     {
       "name": "s2me : Stairway to Mount Everest",

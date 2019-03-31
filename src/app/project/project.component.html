@@ -1,23 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>{{ project.name }}</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h6>{{ getDuration() }}</h6>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <p class="lead" [innerHTML]="project.description"></p>
-    </div>
-  </div>
+<div class="project">
+  <h2>{{ project.name }}</h2>
+  <h6 class="duration">{{ getDuration() }}</h6>
+  <p class="lead" [innerHTML]="project.description"></p>
 
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <labels [values]="project.skills"></labels>
-    </div>
+  <div class="row skills">
+    <div *ngFor="let skill of project.skills" class="skill-tag">{{ skill.name }}</div>
   </div>
 </div>

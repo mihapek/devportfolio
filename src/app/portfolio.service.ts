@@ -22,14 +22,11 @@ export class PortfolioService {
         mergeMap(data => {
           console.log("-=Loading Portfolio=-");
           this.portfolio = data;
-          console.log(this.portfolio);
 
           let skillMap = this.computeSkills();
           for (let skill in skillMap) {
             this.skills.push(skillMap[skill]);
           }
-
-          console.log(this.skills);
 
           for (let key in this.portfolio.others) {
             this.others.push({ key: key, value: this.portfolio.others[key] });

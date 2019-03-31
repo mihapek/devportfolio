@@ -59,3 +59,20 @@ button.skill-button {
     margin: 5px;
   }
 }
+
+.project {
+  .duration {
+    position: relative;
+    top: -20px;
+  }
+  .skills {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .skill-tag {
+      padding: 2px 5px 2px 5px;
+      margin: 3px 3px 0 0;
+      border-radius: 5px;
+      background-color: #32cd3277;
+    }
+  }
+}
