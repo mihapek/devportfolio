@@ -4,9 +4,9 @@
     "foto": "assets/images/avatar/avatar-white.png",
     "motto": "Unus pro omnibus, omnes pro uno",
     "others": {
-      "dob": "1979 in Stachanov (SSSR)",
-      "civil status": "verheiratet",
-      "languages": "Deutsch, Russisch, English"
+      "Geburt": "1979 in Stachanov (SSSR)",
+      "Status": "verheiratet, 2 Kinder (13 und 11)",
+      "Sprachen": "Deutsch, Russisch, English"
     }
   },
   "projects": [

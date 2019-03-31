@@ -5,14 +5,17 @@ import { Project } from "../project/project.structure";
 
 @Component({
   selector: "app-portfolio",
-  templateUrl: "./portfolio.component.html",
-  styleUrls: ["./portfolio.component.scss"]
+  templateUrl: "./portfolio.component.html"
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit {
   filteredProjects: Project[] = [];
+  messages = {};
 
-  constructor(public portfolioService: PortfolioService) {
-    portfolioService.loadPortfolio().subscribe(portfolio => (this.filteredProjects = this.portfolioService.portfolio.projects));
+  constructor(public portfolioService: PortfolioService) {}
+
+  ngOnInit(): void {
+    this.portfolioService.loadPortfolio().subscribe(portfolio => (this.filteredProjects = this.portfolioService.portfolio.projects));
+    this.portfolioService.getMessages().subscribe(messages => (this.messages = messages));
   }
 
   filterProjects(activatedSkills: Skill[]) {

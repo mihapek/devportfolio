@@ -1,17 +1,21 @@
-import { OnDestroy } from '@angular/core';
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { OnDestroy } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
+import { PortfolioService } from "src/app/portfolio.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   currentTheme = "nerd";
   themes: string[] = ["nerd", "playground"];
 
-    constructor(private renderer: Renderer2) {
+  messages = {};
+
+  constructor(private renderer: Renderer2, public portfolioService: PortfolioService) {
     this.changeTheme();
+    this.portfolioService.getMessages().subscribe(messages => (this.messages = messages));
   }
 
   changeTheme() {
@@ -23,12 +27,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.renderer.addClass(document.body, this.currentTheme);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {
     this.renderer.removeClass(document.body, "nerd");
     this.renderer.removeClass(document.body, "classic");
   }
-
 }

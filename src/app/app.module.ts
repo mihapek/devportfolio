@@ -9,13 +9,11 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProjectComponent } from "./project/project.component";
 import { SkillsComponent } from "./skills/skills.component";
-import { LabelsComponent } from "./labels/labels.component";
-import { MainSectionComponent } from "./main-section/main-section.component";
 import { HeaderComponent } from "./navigation/header/header.component";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-  declarations: [PortfolioComponent, SkillsComponent, ProjectComponent, LabelsComponent, MainSectionComponent, HeaderComponent],
+  declarations: [PortfolioComponent, SkillsComponent, ProjectComponent, HeaderComponent],
   imports: [BrowserModule, NgbModule.forRoot(), BrowserAnimationsModule, MyMaterialModule, FlexLayoutModule, HttpClientModule],
   providers: [],
   bootstrap: [PortfolioComponent]

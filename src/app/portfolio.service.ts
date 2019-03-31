@@ -13,6 +13,7 @@ export class PortfolioService {
   private personOthers = [];
 
   public portfolio: any = null;
+  messages = null;
 
   constructor(private http: HttpClient) {}
 
@@ -104,5 +105,18 @@ export class PortfolioService {
       return projectToDate;
     }
     return lastDate;
+  }
+
+  public getMessages(): Observable<any> {
+    if (!this.messages) {
+      return this.http.get("messages.json").pipe(
+        mergeMap(data => {
+          this.messages = data;
+          return of(this.messages);
+        })
+      );
+    } else {
+      return of(this.messages);
+    }
   }
 }
