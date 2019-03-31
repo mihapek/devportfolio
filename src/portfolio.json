@@ -235,8 +235,10 @@
   ],
   "others": {
     "Ausbildung": "<ul><li>2006 - M.Sc. Informatik an der TU Braunschweig</li><li>2005 - Diplom Informatiker an der TU Braunschweig</li></ul>",
-    "Hobby": "<ul><li>First hobby</li><li>Second hobby</li></ul>",
-    "Schulungen": "<ul><li>2012,2013 : Liferay Portal für Großkonzerne, Qualität- und Effizienzsteigerung durch TDD</li></ul>"
+    "Hobby": "<ul><li>Brettspiele spielen und machen</li><li>Outdoor: Wandern, Laufen, Ski, Rugby</li><li>Software-Entwickeln: Apps, Websites, Ardulino</li></ul>",
+    "Schulungen": "<ul><li>2012-2013 : Liferay Portal für Großkonzerne, Qualität- und Effizienzsteigerung durch TDD</li></ul>",
+    "Gebrauchsmuster": "<ul><li>Nr. 20 2018 003 380 - Verpackung von Lebensmitteln mit einer Vorrichtung zur Markierung des Datums beim Öffnen.</li><li>Nr. 20 2014 004 213.6 - Anzeige zur Visualisierung der verbleibenden Fahrzeit bzw. Fahrstrecke, die in einem Fahrzeug befestigt wird.</li></ul>",
+    "Sportliche Tätigkeiten": "<ul><li>1996 − 1997 : Mitglied der deutschen Rugby Jugendnationalmannschaft.</li></ul>"
   },
-  "copyright": "Greenberg 2018"
+  "copyright": "Mark Stein - 2019"
 }

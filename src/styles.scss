@@ -1,7 +1,7 @@
 @import "nerd-theme";
 @import "playground-theme";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-/*@import "~bootstrap/scss/bootstrap.scss";*/
+
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -12,17 +12,6 @@ header {
   padding: 100px 0 50px;
 }
 
-section {
-  padding: 25px 0 0 10px;
-}
-
-.dlabel {
-  margin-right: 5px;
-  margin-top: 5px;
-}
-.skill {
-  font-size: medium;
-}
 
 .capitalize {
   text-transform: capitalize;
@@ -75,4 +64,8 @@ button.skill-button {
       background-color: #32cd3277;
     }
   }
+}
+
+.footer {
+  text-align: right;
 }
