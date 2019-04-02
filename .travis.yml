@@ -11,5 +11,5 @@ before_script:
 script:
   #- ng lint
   - ng build --prod
-  - cd dist/devportfolio
-  - find . -type f -exec curl -u web1590:$FTP_PASS --ftp-create-dirs -T {} ftp://alfa3035.alfahosting-server.de/html/dev-profile/{} \;
+  #- cd dist/devportfolio
+  #- find . -type f -exec curl -u web1590:$FTP_PASS --ftp-create-dirs -T {} ftp://alfa3035.alfahosting-server.de/html/dev-profile/{} \;
