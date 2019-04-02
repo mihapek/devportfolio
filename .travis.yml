@@ -11,11 +11,5 @@ before_script:
 script:
   #- ng lint
   - ng build --prod
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/devportfolio
-  on:
-    branch: master
+  - cd dist/devportfolio
+  - find . -type f -exec curl -u web1590:$FTP_PASS --ftp-create-dirs -T {} ftp://alfa3035.alfahosting-server.de/html/dev-profile/{} \;
