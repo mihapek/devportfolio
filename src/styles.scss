@@ -88,6 +88,10 @@ button.skill-button {
     font-size: smaller;
     position: relative;
     top: -20px;
+
+    .duration {
+      font-weight: bolder;
+    }
   }
   .skills {
     justify-content: flex-start;

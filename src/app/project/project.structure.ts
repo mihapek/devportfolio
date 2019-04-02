@@ -5,6 +5,8 @@ export class Project {
   description: string;
   fromDate: string;
   toDate: string;
+  role?: string;
+  customer?: string;
 
   skills: Skill[];
 }
