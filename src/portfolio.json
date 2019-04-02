@@ -11,13 +11,35 @@
   },
   "projects": [
     {
+      "name": "SPA: Developer-Portfolio",
+      "role": "PO, Entwickler",
+      "customer": "open source project",
+      "description": "Single Page Application for overview of developer portfolio and smart aggregation of developer skills.",
+      "fromDate": "2019-03-01",
+      "toDate": "2019-04-30",
+      "skills": [{ "name": "Angular", "version": "7" }, "Angular-Material", "Travis-CI", "VS-Code", "Git", "GitHub", "npm", "SCSS", "Sass"]
+    },
+    {
       "name": "Webbasiertes EDV-System für Stammdaten und Kundenverwaltung",
       "role": "Entwickler",
       "customer": "IBM",
       "description": "Migration der EDV-Systeme für die Stammdaten- und Kundenverwaltung von legacy Fat-Clients auf moderne webbasierte Technologie.",
       "fromDate": "2018-06-01",
       "toDate": "",
-      "skills": [{ "name": "Angular", "version": "6" }, "JSP", "LDAP", { "name": "Java", "version": "8" }, "Eclipse", "VS-Code", "SVN", "Jira", "Ant", "Maven"]
+      "skills": [
+        { "name": "Angular", "version": "6" },
+        "JSP",
+        "LDAP",
+        { "name": "Java", "version": "8" },
+        "Eclipse",
+        "VS-Code",
+        "SVN",
+        "Jira",
+        "Ant",
+        "Maven",
+        "Git",
+        "Bitbucket"
+      ]
     },
     {
       "name": "Migration Vaadin 7 auf Vaadin 8",
@@ -88,12 +110,12 @@
     },
     {
       "name": "Einkauf und Lieferantenportal",
-      "role": "Entwickler",
+      "role": "Team-Lead",
       "customer": "Volkswagen AG",
       "description": "Personifizierung bestehendes Einkauf und Lieferantenportal.",
       "fromDate": "2017-02-01",
       "toDate": "2017-03-31",
-      "skills": ["Java", "Spring", "AngularJS", "Git", "Docker", "Spring-Boot"]
+      "skills": ["Java", "Spring", "AngularJS", "Git", "Docker", "Spring-Boot", "Junit", "Selenium"]
     },
     {
       "name": "Webportal für Trainingszentren",
@@ -102,7 +124,7 @@
       "description": "Technische Konzeption und Entwicklung eines Webportals für Trainer und Trainingszentren.",
       "fromDate": "2016-11-01",
       "toDate": "2017-02-28",
-      "skills": ["Java", "Spring", "JSP", "SVN", "Oracle", "Oracle Text-Search", "Eclipse", "Ant", "Jenkins"]
+      "skills": ["Java", "Spring", "JSP", "SVN", "Oracle", "Oracle Text-Search", "Eclipse", "Ant", "Jenkins", "Junit", "Selenium", "Mockito"]
     },
     {
       "name": "Internationalisierung des Portals 'fussball.de",
@@ -111,11 +133,11 @@
       "description": "Technische Konzeption und Entwicklung der Internationalisierung",
       "fromDate": "2015-12-01",
       "toDate": "2016-11-30",
-      "skills": ["Selenium", "Gradle", "JUnit", "Mockito", "Java", "Oracle", "AngularJS", "grunt", "Ant", "Sass", "SVN", "Git", "Eclipse"]
+      "skills": ["Selenium", "Gradle", "JUnit", "Mockito", "Java", "Oracle", "AngularJS", "grunt", "Ant", "Sass", "SVN", "Git", "Eclipse", "Groovy"]
     },
     {
       "name": "s2me : Stairway to Mount Everest",
-      "role": "Architekt, Entwickler",
+      "role": "PO, Architekt, Entwickler",
       "customer": "s2me",
       "description": "In dem Projekt geht es darum Bewegung und Spaß in den Büroalltag zu integrieren und so für fitte und motivierte Mitarbeiter zu sorgen. Dabei handelt es sich um ein Online-Spiel, welches einen dazu motivieren soll öfter einmal die Treppen zu nehmen und den Fahrstuhl links liegen zu lassen.      Nach jedem Treppensteigen hat man die Möglichkeit dies auf der S2ME Seite einzugeben und so virtuell den Mount Everest zu erklimmen. Auf der Homepage sieht man seine eigene Position auf dem Berg, sowie die seiner Kollegen. Durch jeden Treppenaufstieg ist man seinem Ziel wieder ein Stück näher. So sorgt S2ME nicht nur für fittere und gesündere Mitarbeiter, es verbreitet sich auch ganz schnell eine lockere und spaßige Atmosphäre am Arbeitsplatz. Denn jetzt haben alle das gleiche Ziel. Die Spitze des Mount Everest!",
       "fromDate": "2015-11-01",
@@ -123,8 +145,8 @@
       "skills": ["microservices", "Kubernetes", "minikube", "Java", { "name": "Angular", "version": "2" }, "Docker"]
     },
     {
-      "name": "Migration von Liferay-Portal zur SPA (Single Page Application",
-      "role": "Lead-Entwickler",
+      "name": "Migration von Liferay-Portal zur SPA (Single Page Application)",
+      "role": "Team-Lead",
       "customer": "Volkswagen AG",
       "description": "Technische Konzeption der Migration und Releaseplanung. Entwicklung von dynamischen Komponenten auf REST- & AngularJS-Basis. Hierbei wurden Liferay-Portlets zur genannten Technologien migriert.",
       "fromDate": "2015-05-01",
@@ -133,7 +155,7 @@
     },
     {
       "name": "Realisierung und Integration eines Unternehmensportals auf Liferay Basis",
-      "role": "Lead-Entwickler",
+      "role": "Team-Lead",
       "customer": "Volkswagen AG",
       "description": "Technische Konzeption. Releaseplanung. Erstellung von Forum- und Mediathek-Portlet (Java, REST, AngularJS). Aufstellung von Continuous Integration (Jenkins, Ant). Integration des Usermanagements ins Portal. Umsetzung der Testautomatisierung (Selenium, JUnit, Mockito, PowerMock). Anbindung CMS ans Portal (Liferay, FirstSpirit)",
       "fromDate": "2013-01-01",
@@ -193,7 +215,7 @@
         "REST",
         "Oracle",
         "Cruise",
-        "Java"
+        "JUnit"
       ]
     },
     {
@@ -207,7 +229,7 @@
     },
     {
       "name": "Studentisches Portal für TU Braunschweig",
-      "role": "Lead-Entwickler",
+      "role": "Team-Lead",
       "customer": "TU Braunschweig",
       "description": "Projektbeschreibung:\n Für die Vereinheitlichung diverse webbasierte Systeme an der TU-Braunschweig wurde ein Stundenportal auf Basis von Liferay-Portal entwickelt und eingesetzt. Es wurde ein einheitliches Nutzerverwaltungssystem und Single-Sign-On (SSO) auf Basis von CAS-Server eingeführt. Einzelne Applikationen wurden in Form von Portlets in das Portal integriert. Hierdurch waren Studierende in der Lage ein individuelles Dashboard nach ihren Vorlieben zu gestallten.",
       "fromDate": "2008-11-01",
@@ -221,16 +243,16 @@
       "description": "In Rahmen des Stundenportals wurde eine webbasierte Karte der Unigelände. Ein der Schwerpunkte war die Abbildung der Instituts- und Lehrräume auf der Karte, sowie die Suche nach Gebäuden, Räumen und Instituten.",
       "fromDate": "2010-06-01",
       "toDate": "2010-09-30",
-      "skills": ["Scrum", "Continuous Integration", "SSO", "OpenStreetMap", "JQuery", "Play", "MySQL", "HSQLDB", "Jersey", "REST"]
+      "skills": ["Scrum", "Continuous Integration", "SSO", "CAS", "OpenStreetMap", "JQuery", "Play", "MySQL", "HSQLDB", "Jersey", "REST"]
     },
     {
       "name": "Web-Applikation für Modulhandbuch-Management",
-      "role": "Lead-Entwickler",
+      "role": "Team-Lead",
       "customer": "TU Braunschweig",
       "description": "In Folge des Bologna-Prozesses, bei der Umstellung der Studiengänge von Diplom auf Bachelor & Master, wurde an der TU-Braunschweig ein Web-Portal für die Erstellung und Verwaltung der Modulhandbücher entwickelt. In diesem Portal werden die Module von den Institutsmitarbeitern gepflegt. Die Studiengagnsverantwortlichen sind zuständig für das Zusammenstellen der Module zu einem Gesamtstudiengang. Für Studierende wird hierdurch ein Modulhandbuch für ihren Studiengang in elektronische Form vom System bereitgestellt. Das Portal wurde um weitere Schnittstellen zur StudIP und HIS erweitert.",
       "fromDate": "2005-09-01",
       "toDate": "2008-09-30",
-      "skills": ["Agile", "Java"]
+      "skills": ["Agile", "Java", "Struts", "Tiles", "JUnit", "JSP"]
     }
   ],
   "others": {
