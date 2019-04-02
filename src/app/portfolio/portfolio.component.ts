@@ -43,12 +43,6 @@ export class PortfolioComponent implements OnInit {
         foundAllSkills = false;
       }
     });
-
-    console.log(project.skills);
-    console.log(thisSkillNames);
-    console.log(activatedSkills);
-    console.log(foundAllSkills);
-
     return foundAllSkills;
   }
 }
