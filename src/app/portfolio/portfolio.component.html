@@ -32,7 +32,7 @@
   <div class="middle">
     <div class="main-section">
       <div id="skills" class="anchor"></div>
-      {{ messages["skills"] }}
+      <div class="section-name">{{ messages["skills"] }}</div>
     </div>
 
     <div id="skils-content">
@@ -41,7 +41,7 @@
 
     <div class="main-section">
       <div id="projects" class="anchor"></div>
-      {{ messages["projects"] }} ({{ filteredProjects.length }})
+      <div class="section-name">{{ messages["projects"] }} ({{ filteredProjects.length }})</div>
       <div *ngIf="filteredProjects.length == 0" class="no-projects">{{ messages["no-projects"] }}</div>
     </div>
 
@@ -51,7 +51,7 @@
 
     <div class="main-section">
       <div id="others" class="anchor"></div>
-      {{ messages["other"] }}
+      <div class="section-name">{{ messages["other"] }}</div>
     </div>
 
     <div *ngFor="let item of portfolioService.others; let even = even" [ngClass]="{ 'bg-light': even }" class="other-entry" id="item.key">

@@ -1,10 +1,12 @@
+@import "black-and-white.scss";
+
 @mixin bg-strike($color) {
   display: block;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
 
-  h1 {
+  .section-name {
     position: relative;
     display: inline-block;
 
@@ -27,8 +29,22 @@
 }
 
 .nerd {
-  * {
-    font-family: courier, courier new, serif;
+  @include black-and-white(#fff, #f1f1f2, #63646d, #7d7e86, #cfd0d5, #ff0000, #2a2938, #2a2938, #2a2938, "courier", "courier");
+
+  .decoration {
+    display: none;
+  }
+  .person-data {
+    .person-name {
+      font-size: 60px;
+    }
+  }
+  .filtered-skills {
+    .skill-card {
+      .mat-card {
+        background-color: #fff;
+      }
+    }
   }
 
   .main-section {
