@@ -1,0 +1,217 @@
+@mixin black-and-white(
+  $color-back,
+  $color-back-lighter,
+  $color-decoration,
+  $color-nav,
+  $color-passiv,
+  $color-dark,
+  $color-font-main,
+  $color-font-lighter,
+  $color-activated,
+  $font-header,
+  $font-text
+) {
+  color: $color-font-main;
+  margin: 0;
+  padding: 0;
+  font-family: $font-text, sans-serif;
+  background-color: $color-back;
+
+  .topnav {
+    overflow: hidden;
+    background-color: $color-nav;
+  }
+
+  .person-data {
+    min-width: 480px;
+    position: relative;
+
+    .decoration {
+      position: absolute;
+      background-color: $color-decoration;
+      opacity: 0.3;
+      width: 268px;
+      height: 200px;
+      top: 0px;
+      left: -33px;
+      z-index: 10;
+    }
+
+    .person-name {
+      font-size: 70px;
+      font-family: $font-header;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+    }
+
+    .person-motto {
+      font-size: 19, 14px;
+      font-family: $font-text;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+      line-height: 2;
+      letter-spacing: 3px;
+    }
+
+    .biografie {
+      font-size: 17px;
+      font-family: $font-text;
+      color: $color-font-lighter;
+      line-height: 2;
+
+      .key {
+        padding-bottom: 20px;
+      }
+      .value {
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .middle {
+    .main-section {
+      font-size: 35px;
+      font-family: $font-header;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      margin: 60px 0 30px 0;
+    }
+  }
+
+  .bg-light {
+    background-color: $color-back-lighter;
+  }
+
+  .project {
+    padding: 20px 20px 20px 20px;
+    margin: 20px 0 0 0;
+
+    .project-name {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0 0 20px 0;
+    }
+
+    .project-meta {
+      div {
+        margin: 0 0 10px 0;
+      }
+    }
+    .description {
+      margin: 40px 0 40px 0;
+    }
+    .skills {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .skill-tag {
+        font-family: $font-text, sans-serif;
+        padding: 2px 5px 2px 5px;
+        margin: 3px 3px 0 0;
+        border-radius: 0px;
+        background-color: $color-passiv;
+      }
+    }
+  }
+
+  .skills-area {
+    .skill-button {
+      text-align: center;
+      font-family: $font-text, sans-serif;
+      font-size: 17px;
+      font-weight: normal;
+      padding: 8px 40px 8px 20px;
+      margin: 8px 8px 0 0;
+      border-radius: 0px;
+      cursor: pointer;
+      position: relative;
+
+      .icon {
+        font-family: "mst dev portfolio";
+        font-size: 20px;
+        position: absolute;
+        right: 5px;
+        top: -2px;
+      }
+
+      &.not-activated {
+        background-color: $color-passiv;
+        color: $color-font-main;
+      }
+
+      &:hover,
+      &.activated {
+        background-color: $color-activated;
+        color: $color-back;
+      }
+    }
+
+    .deactivate-all-skills {
+      @extend .skill-button;
+      height: 52px;
+      position: absolut;
+      top: 3px;
+
+      .deleteAll {
+        position: relative;
+        top: -3px;
+        right: 2px;
+      }
+    }
+  }
+
+  .filtered-skills {
+    .skill-card {
+      .mat-card {
+        font-family: $font-text, sans-serif;
+        background-color: $color-activated;
+        font-size: 17px;
+        border-radius: unset;
+
+        .mat-card-header {
+          .mat-card-header-text {
+            width: 100%;
+          }
+          .mat-card-title {
+            text-align: center;
+            font-weight: bold;
+          }
+        }
+
+        .mat-card-content {
+          .entry {
+            font-size: 17px;
+            margin-bottom: 10px;
+          }
+        }
+
+        .mat-card-avatar {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .other-entry {
+    padding: 20px 20px 20px 20px;
+    margin: 20px 0 0 0;
+    ul {
+      list-style-type: none;
+      li {
+        margin: 0 0 10px 0;
+      }
+    }
+    .other-key {
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  .no-projects {
+    font-family: $font-text, sans-serif;
+    font-size: 17px;
+    letter-spacing: 3px;
+  }
+}

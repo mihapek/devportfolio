@@ -8,7 +8,7 @@ import { PortfolioService } from "src/app/portfolio.service";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  currentTheme = "white";
+  currentTheme = "material";
   themes: string[] = ["nerd", "material", "white", "black"];
 
   messages = {};
