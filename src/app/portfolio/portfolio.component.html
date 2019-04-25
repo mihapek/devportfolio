@@ -1,20 +1,22 @@
 <app-header></app-header>
 
 <div *ngIf="portfolioService.portfolio; else loading" class="main-content">
-  <header class="" id="page-top">
+  <header class="basic-data" id="page-top">
     <div class="container">
       <div class="row person">
-        <div class="col personMeta">
-          <h1>{{ portfolioService.portfolio.person.name }}</h1>
-          <h5>
+        <div class="person-data">
+          <div class="decoration"></div>
+          <div class="person-name">{{ portfolioService.portfolio.person.name }}</div>
+          <div class="person-motto">
             <i>{{ portfolioService.portfolio.person.motto }}</i>
-          </h5>
-          <div class="container">
+          </div>
+
+          <div class="biografie">
             <div class="row" *ngFor="let item of portfolioService.personOthers">
-              <div class="col">
+              <div class="key">
                 <span [innerHtml]="item.key"></span>
               </div>
-              <div class="col">
+              <div class="value">
                 <span [innerHtml]="item.value"></span>
               </div>
             </div>
@@ -27,33 +29,35 @@
     </div>
   </header>
 
-  <div class="main-section">
-    <div id="skills" class="anchor"></div>
-    <h1>{{ messages["skills"] }}</h1>
-  </div>
+  <div class="middle">
+    <div class="main-section">
+      <div id="skills" class="anchor"></div>
+      {{ messages["skills"] }}
+    </div>
 
-  <div id="skils-content">
-    <skills (filteredSkills)="filterProjects($event)"></skills>
-  </div>
+    <div id="skils-content">
+      <skills (filteredSkills)="filterProjects($event)"></skills>
+    </div>
 
-  <div class="main-section">
-    <div id="projects" class="anchor"></div>
-    <h1>{{ messages["projects"] }} ({{ filteredProjects.length }})</h1>
-    <div *ngIf="filteredProjects.length == 0">{{ messages["no-projects"] }}</div>
-  </div>
+    <div class="main-section">
+      <div id="projects" class="anchor"></div>
+      {{ messages["projects"] }} ({{ filteredProjects.length }})
+      <div *ngIf="filteredProjects.length == 0">{{ messages["no-projects"] }}</div>
+    </div>
 
-  <div *ngFor="let project of filteredProjects; let even = even" [ngClass]="{ 'bg-light': even }">
-    <project [project]="project"></project>
-  </div>
+    <div *ngFor="let project of filteredProjects; let even = even" [ngClass]="{ 'bg-light': even, 'bg-dark': !even }">
+      <project [project]="project"></project>
+    </div>
 
-  <div class="main-section">
-    <div id="others" class="anchor"></div>
-    <h1>{{ messages["other"] }}</h1>
-  </div>
+    <div class="main-section">
+      <div id="others" class="anchor"></div>
+      {{ messages["other"] }}
+    </div>
 
-  <div *ngFor="let item of portfolioService.others; let even = even" [ngClass]="{ 'bg-light': even }" id="item.key">
-    <h2>{{ item.key }}</h2>
-    <p class="lead" [innerHtml]="item.value"></p>
+    <div *ngFor="let item of portfolioService.others; let even = even" [ngClass]="{ 'bg-light': even }" class="other-entry" id="item.key">
+      <div class="other-key">{{ item.key }}</div>
+      <p class="lead" [innerHtml]="item.value"></p>
+    </div>
   </div>
   <!-- Footer -->
   <div class="footer">Copyright &copy; {{ portfolioService.portfolio.copyright }}</div>

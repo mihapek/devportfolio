@@ -1,11 +1,11 @@
 <div class="project">
-  <h2>{{ project.name }}</h2>
+  <div class="project-name">{{ project.name }}</div>
   <div class="project-meta">
     <div class="duration">{{ getDuration() }}</div>
     <div class="customer">{{ project.customer }}</div>
     <div class="role">{{ project.role }}</div>
   </div>
-  <p class="lead" [innerHTML]="project.description"></p>
+  <div class="description" [innerHTML]="project.description"></div>
 
   <div class="row skills">
     <div *ngFor="let skill of project.skills" class="skill-tag">{{ skill.name }}</div>

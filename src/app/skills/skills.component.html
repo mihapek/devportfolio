@@ -13,20 +13,20 @@
 </div>
 
 <div class="main-section" *ngIf="activatedSkills.length != 0">
-  <h1>{{ messages["filtered-by"] }}</h1>
+  {{ messages["filtered-by"] }}
 </div>
 
 <div class="filtered-skills">
   <div *ngFor="let skill of activatedSkills" class="skill-card">
     <mat-card class="skill-card" color="primary">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar class="card-header"></div>
         <mat-card-title>{{ skill.name }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        {{ messages["projects"] }}: {{ skill.count }}<br />
-        {{ messages["months"] }}: {{ skill.months }}<br />
-        {{ messages["last-job-date"] }}: {{ skill.lastJob | date }}<br />
+        <div class="entry">{{ messages["projects"] }}: {{ skill.count }}</div>
+        <div class="entry">{{ messages["months"] }}: {{ skill.months }}</div>
+        <div class="entry">{{ messages["last-job-date"] }}: {{ skill.lastJob | date }}</div>
       </mat-card-content>
     </mat-card>
   </div>

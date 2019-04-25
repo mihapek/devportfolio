@@ -1,5 +1,7 @@
-@import "nerd-theme";
-@import "playground-theme";
+@import "themes/nerd-theme";
+@import "themes/material-theme";
+@import "themes/white-theme";
+@import "themes/black-theme";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
@@ -52,7 +54,7 @@ button.skill-button {
   flex-wrap: wrap-reverse;
   justify-content: space-around;
 
-  .personMeta {
+  .person-data {
     width: 350px;
   }
 
@@ -84,15 +86,6 @@ button.skill-button {
 }
 
 .project {
-  .project-meta {
-    font-size: smaller;
-    position: relative;
-    top: -20px;
-
-    .duration {
-      font-weight: bolder;
-    }
-  }
   .skills {
     justify-content: flex-start;
     flex-wrap: wrap;
