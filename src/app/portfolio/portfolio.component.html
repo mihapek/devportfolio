@@ -42,7 +42,7 @@
     <div class="main-section">
       <div id="projects" class="anchor"></div>
       {{ messages["projects"] }} ({{ filteredProjects.length }})
-      <div *ngIf="filteredProjects.length == 0">{{ messages["no-projects"] }}</div>
+      <div *ngIf="filteredProjects.length == 0" class="no-projects">{{ messages["no-projects"] }}</div>
     </div>
 
     <div *ngFor="let project of filteredProjects; let even = even" [ngClass]="{ 'bg-light': even, 'bg-dark': !even }">

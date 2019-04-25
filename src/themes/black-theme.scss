@@ -109,10 +109,19 @@
       font-family: "Montserrat", sans-serif;
       font-size: 17px;
       font-weight: normal;
-      padding: 9px 28px 9px 28px;
-      margin: 9px 9px 0 0;
+      padding: 8px 40px 8px 20px;
+      margin: 8px 8px 0 0;
       border-radius: 0px;
       cursor: pointer;
+      position: relative;
+
+      .icon {
+        font-family: "mst dev portfolio";
+        font-size: 20px;
+        position: absolute;
+        right: 5px;
+        top: -2px;
+      }
 
       &.not-activated {
         background-color: #6d6d76;
@@ -123,6 +132,19 @@
       &.activated {
         background-color: #ececff;
         color: #343541;
+      }
+    }
+
+    .deactivate-all-skills {
+      @extend .skill-button;
+      height: 52px;
+      position: absolut;
+      top: 3px;
+
+      .deleteAll {
+        position: relative;
+        top: -3px;
+        right: 2px;
       }
     }
   }
@@ -168,5 +190,11 @@
       text-transform: uppercase;
       font-weight: bold;
     }
+  }
+
+  .no-projects {
+    font-family: "Montserrat", sans-serif;
+    font-size: 17px;
+    letter-spacing: 3px;
   }
 }

@@ -22,12 +22,12 @@ export class SkillsComponent implements OnInit {
     this.portfolioService.getMessages().subscribe(messages => (this.messages = messages));
   }
 
-  icons = [{ to: 6, src: "assets/images/skills/junior" }, { to: 30, src: "assets/images/skills/minior" }, { to: 9999, src: "assets/images/skills/senior" }];
+  icons = [{ to: 6, icon: "junior" }, { to: 30, icon: "minior" }, { to: 9999, icon: "senior" }];
 
   private getIconPath(months: number) {
     for (let item of this.icons) {
       if (item.to > months) {
-        return item.src;
+        return item.icon;
       }
     }
   }
