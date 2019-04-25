@@ -23,14 +23,14 @@
   }
 
   .person-data {
-    min-width: 480px;
+    min-width: 400px;
     position: relative;
 
     .decoration {
       position: absolute;
       background-color: $color-decoration;
       opacity: 0.3;
-      width: 268px;
+      width: 210px;
       height: 200px;
       top: 0px;
       left: -33px;
@@ -38,7 +38,7 @@
     }
 
     .person-name {
-      font-size: 70px;
+      font-size: 50px;
       font-family: $font-header;
       letter-spacing: 10px;
       text-transform: uppercase;
