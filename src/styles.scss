@@ -9,7 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+.basic-data {
   padding: 100px 0 50px;
 }
 
@@ -105,4 +105,18 @@ button.skill-button {
 .footer {
   margin-top: 50px;
   text-align: right;
+}
+
+@media screen and (max-width: $smallResolution) {
+  .person-foto img {
+    width: 300px;
+  }
+
+  .basic-data .person .person-data .person-name {
+    font-size: 30px;
+  }
+
+  app-header div.topnav a.menu-item.menu-others {
+    display: none;
+  }
 }

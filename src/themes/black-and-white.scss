@@ -1,3 +1,5 @@
+$smallResolution: 420px;
+
 @mixin black-and-white(
   $color-back,
   $color-back-lighter,
@@ -26,15 +28,24 @@
     min-width: 400px;
     position: relative;
 
+    @media screen and (max-width: $smallResolution) {
+      min-width: 300px;
+    }
+
     .decoration {
       position: absolute;
       background-color: $color-decoration;
       opacity: 0.3;
-      width: 210px;
-      height: 200px;
+      width: 195px;
+      height: 195px;
       top: 0px;
-      left: -33px;
+      left: -5px;
       z-index: 10;
+
+      @media screen and (max-width: $smallResolution) {
+        width: 172px;
+        height: 140px;
+      }
     }
 
     .person-name {
@@ -42,6 +53,7 @@
       font-family: $font-header;
       letter-spacing: 10px;
       text-transform: uppercase;
+      text-align: center;
     }
 
     .person-motto {
@@ -59,6 +71,11 @@
       font-family: $font-text;
       color: $color-font-lighter;
       line-height: 2;
+
+      @media screen and (max-width: $smallResolution) {
+        font-size: 12px;
+        margin: 0 10px 0 10px;
+      }
 
       .key {
         padding-bottom: 20px;

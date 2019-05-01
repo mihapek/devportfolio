@@ -1,33 +1,31 @@
 <app-header></app-header>
 
 <div *ngIf="portfolioService.portfolio; else loading" class="main-content">
-  <header class="basic-data" id="page-top">
-    <div class="container">
-      <div class="row person">
-        <div class="person-data">
-          <div class="decoration"></div>
-          <div class="person-name">{{ portfolioService.portfolio.person.name }}</div>
-          <div class="person-motto">
-            <i>{{ portfolioService.portfolio.person.motto }}</i>
-          </div>
+  <div class="basic-data" id="page-top">
+    <div class="row person">
+      <div class="person-data">
+        <div class="decoration"></div>
+        <div class="person-name">{{ portfolioService.portfolio.person.name }}</div>
+        <div class="person-motto">
+          <i>{{ portfolioService.portfolio.person.motto }}</i>
+        </div>
 
-          <div class="biografie">
-            <div class="row" *ngFor="let item of portfolioService.personOthers">
-              <div class="key">
-                <span [innerHtml]="item.key"></span>
-              </div>
-              <div class="value">
-                <span [innerHtml]="item.value"></span>
-              </div>
+        <div class="biografie">
+          <div class="row" *ngFor="let item of portfolioService.personOthers">
+            <div class="key">
+              <span [innerHtml]="item.key"></span>
+            </div>
+            <div class="value">
+              <span [innerHtml]="item.value"></span>
             </div>
           </div>
         </div>
-        <div class="col personFoto">
-          <img src="{{ portfolioService.portfolio.person.foto }}" />
-        </div>
+      </div>
+      <div class="col person-foto">
+        <img src="{{ portfolioService.portfolio.person.foto }}" />
       </div>
     </div>
-  </header>
+  </div>
 
   <div class="middle">
     <div class="main-section">
@@ -50,7 +48,7 @@
     </div>
 
     <div class="main-section">
-      <div id="others" class="anchor"></div>
+      <div id="others" class="anchor others"></div>
       <div class="section-name">{{ messages["other"] }}</div>
     </div>
 
