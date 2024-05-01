@@ -1,14 +1,39 @@
-<div *ngFor="let skillType of portfolioService.skillTypes">
-    <h3 class="capitalize" style="margin-top: 20px;">{{skillType}}</h3>
-
-    <span *ngFor="let skill of portfolioService.getSkills(skillType)">
-      <ng-template #popContent>
-        projects: {{skill.count}}<br/>
-        months: {{skill.months}}<br/>
-        last job: {{skill.lastJob | date}}<br/>
-      </ng-template>
-      <button type="button" class="btn btn-primary dlabel" [ngbPopover]="popContent" popoverTitle="{{skill.name}}">
-        {{skill.name}} <img src="{{getIconPath(skill.months)}}" height="20" width="20" alt="months: {{skill.months}}"/>
-      </button>
-    </span>
+<div class="skills-area">
+  <div *ngFor="let skill of getSkills()">
+    <button *ngIf="!skill.activated" class="skill-button not-activated" mat-stroked-button color="primary" (click)="addSkillToFilter(skill)">
+      {{ skill.name }}
+      <i class="icon icon-{{ getIconPath(skill.months) }}"></i>
+    </button>
+    <button *ngIf="skill.activated" class="skill-button activated" mat-raised-button color="primary" (click)="removeSkillFromFilter(skill)">
+      {{ skill.name }}
+      <i class="icon icon-{{ getIconPath(skill.months) }}"></i>
+    </button>
   </div>
+  <div>
+    <button class="deactivate-all-skills" mat-mini-fab color="warn" (click)="deactivateAllSkills()" *ngIf="activatedSkills.length != 0">
+      <i class="deleteAll material-icons">
+        delete_forever
+      </i>
+    </button>
+  </div>
+</div>
+
+<div class="main-section" *ngIf="activatedSkills.length != 0">
+  <div class="section-name">{{ messages["filtered-by"] }}</div>
+</div>
+
+<div class="filtered-skills">
+  <div *ngFor="let skill of activatedSkills" class="skill-card">
+    <mat-card class="skill-card" color="primary">
+      <mat-card-header>
+        <div mat-card-avatar class="card-header"></div>
+        <mat-card-title>{{ skill.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="entry">{{ messages["projects"] }}: {{ skill.count }}</div>
+        <div class="entry">{{ messages["months"] }}: {{ skill.months }}</div>
+        <div class="entry">{{ messages["last-job-date"] }}: {{ skill.lastJob | date }}</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

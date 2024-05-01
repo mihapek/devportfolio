@@ -1,107 +1,66 @@
-<!-- Navigation
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">Top</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#others">Others</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#" (click)="changeTheme()">Theme: <span class="capitalize">{{currentTheme}}
-              > </span></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
--->
-
 <app-header></app-header>
 
-<header class="" id="page-top">
-  <div class="container">
-    <div class="row">
-      <div class="col col-lg-5">
-        <h1>{{portfolioService.portfolio.person.name}}</h1>
-        <h5>
-          <i>{{portfolioService.portfolio.person.motto}}</i>
-        </h5>
-        <div class="container">
+<div *ngIf="portfolioService.portfolio; else loading" class="main-content">
+  <div class="basic-data" id="page-top">
+    <div class="row person">
+      <div class="person-data">
+        <div class="decoration"></div>
+        <div class="person-name">{{ portfolioService.portfolio.person.name }}</div>
+        <div class="person-motto">
+          <i>{{ portfolioService.portfolio.person.motto }}</i>
+        </div>
+
+        <div class="biografie">
           <div class="row" *ngFor="let item of portfolioService.personOthers">
-            <div class="col col-lg-4">
+            <div class="key">
               <span [innerHtml]="item.key"></span>
             </div>
-            <div class="col">
+            <div class="value">
               <span [innerHtml]="item.value"></span>
             </div>
           </div>
         </div>
       </div>
-      <div class="col">
-      </div>
-      <div class="col col-lg-4">
-        <img src="{{portfolioService.portfolio.person.foto}}" />
+      <div class="col person-foto">
+        <img src="{{ portfolioService.portfolio.person.foto }}" />
       </div>
     </div>
   </div>
-</header>
 
-<section id="skills" class="main-section">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h1>Skills</h1>
+  <div class="middle">
+    <div class="main-section">
+      <div id="skills" class="anchor"></div>
+      <div class="section-name">{{ messages["skills"] }}</div>
+    </div>
+
+    <div id="skils-content">
+      <skills (filteredSkills)="filterProjects($event)"></skills>
+    </div>
+
+    <div class="main-section">
+      <div id="projects" class="anchor"></div>
+      <div class="section-name">{{ messages["projects"] }} ({{ filteredProjects.length }})</div>
+      <div *ngIf="filteredProjects.length == 0" class="no-projects">{{ messages["no-projects"] }}</div>
+    </div>
+
+    <div *ngFor="let project of filteredProjects; let even = even" [ngClass]="{ 'bg-light': even, 'bg-dark': !even }">
+      <project [project]="project"></project>
+    </div>
+
+    <div class="main-section">
+      <div id="others" class="anchor others"></div>
+      <div class="section-name">{{ messages["other"] }}</div>
+    </div>
+
+    <div *ngFor="let item of portfolioService.others; let even = even" [ngClass]="{ 'bg-light': even }" class="other-entry" id="item.key">
+      <div class="other-key">{{ item.key }}</div>
+      <p class="lead" [innerHtml]="item.value"></p>
     </div>
   </div>
-</section>
-<section id="skils-content">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <skills></skills>
-    </div>
-  </div>
-</section>
-<section id="projects" class="main-section">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h1>Projects</h1>
-    </div>
-  </div>
-</section>
-<section *ngFor="let project of portfolioService.portfolio.projects; let even=even" [ngClass]="{'bg-light':even}">
-  <project [project]="project"></project>
-</section>
-<section id="others" class="main-section">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h1>Others</h1>
-    </div>
-  </div>
-</section>
-<section *ngFor="let item of portfolioService.others; let even=even" [ngClass]="{'bg-light':even}" id="item.key">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h2>{{item.key}}</h2>
-        <p class="lead" [innerHtml]="item.value"></p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-  <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; {{portfolioService.portfolio.copyright}}</p>
-  </div>
-  <!-- /.container -->
-</footer>
+  <!-- Footer -->
+  <div class="footer">Copyright &copy; {{ portfolioService.portfolio.copyright }}</div>
+</div>
+
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>

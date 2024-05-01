@@ -1,29 +1,122 @@
-@import "nerd-theme";
-@import "playground-theme";
+@import "themes/nerd-theme";
+@import "themes/material-theme";
+@import "themes/black-theme";
+@import "themes/white-theme";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-/*@import "~bootstrap/scss/bootstrap.scss";*/
 
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+.basic-data {
   padding: 100px 0 50px;
 }
 
-section {
-  padding: 25px 0 0 10px;
-}
-
-.dlabel {
-  margin-right: 5px;
-  margin-top: 5px;
-}
-.skill {
-  font-size: medium;
+.person-motto {
+  text-align: center;
 }
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .col {
+    margin-right: 5px;
+  }
+}
+
+.main-content {
+  margin: 0 20px 0 20px;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -20px;
+  visibility: hidden;
+}
+
+button.skill-button {
+  margin: 5px;
+}
+
+button.skill-button {
+  g paht {
+    fill: yellow;
+  }
+}
+
+.person {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+
+  .person-data {
+    width: 350px;
+  }
+
+  img {
+    max-width: 400px;
+  }
+}
+
+.bg-light {
+  background-color: #00000007;
+}
+
+.skills-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.filtered-skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .skill-card {
+    margin: 5px;
+  }
+}
+
+.project {
+  .skills {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .skill-tag {
+      padding: 2px 5px 2px 5px;
+      margin: 3px 3px 0 0;
+      border-radius: 5px;
+      background-color: #32cd3277;
+    }
+  }
+}
+
+.footer {
+  margin-top: 50px;
+  text-align: right;
+}
+
+@media screen and (max-width: $smallResolution) {
+  .person-foto img {
+    width: 300px;
+  }
+
+  .basic-data .person .person-data .person-name {
+    font-size: 30px;
+  }
+
+  app-header div.topnav a.menu-item.menu-others {
+    display: none;
+  }
 }

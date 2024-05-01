@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: required
+branches:
+  only:
+    - master
+before_script:
+  - npm install -g @angular/cli
+script:
+  #- ng lint
+  - ng build --prod
+  #- cd dist/devportfolio
+  #- find . -type f -exec curl -u web1590:$FTP_PASS --ftp-create-dirs -T {} ftp://alfa3035.alfahosting-server.de/html/dev-profile/{} \;

@@ -1,62 +1,83 @@
 import { Injectable } from "@angular/core";
 import { Skill } from "./skills/skill.structure";
+import { HttpClient } from "@angular/common/http";
+import { Observable, of } from "rxjs";
+import { mergeMap } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
 })
 export class PortfolioService {
-  private skills = {};
+  private skills: Skill[] = [];
   private others = [];
   private personOthers = [];
 
-  public skillTypes = ["languages", "frameworks", "tools"];
+  public portfolio: any = null;
+  messages = null;
 
-  constructor() {
-    console.log("Load PortfolioService");
+  constructor(private http: HttpClient) {}
 
-    for (let skillType of this.skillTypes) {
-      let skillMap = this.computeSkills(skillType);
-      let skillsArray: Array<Skill> = [];
-      for (let skill in skillMap) {
-        skillsArray.push(skillMap[skill]);
-      }
+  public loadPortfolio(): Observable<any> {
+    if (!this.portfolio) {
+      return this.http.get("portfolio.json").pipe(
+        mergeMap(data => {
+          console.log("-=Loading Portfolio=-");
+          this.portfolio = data;
 
-      this.skills[skillType] = skillsArray;
-    }
+          let skillMap = this.computeSkills();
+          for (let skill in skillMap) {
+            this.skills.push(skillMap[skill]);
+          }
+          this.skills.sort((a, b) => b.months - a.months);
 
-    for (let key in this.portfolio.others) {
-      this.others.push({ key: key, value: this.portfolio.others[key] });
-    }
+          for (let key in this.portfolio.others) {
+            this.others.push({ key: key, value: this.portfolio.others[key] });
+          }
 
-    for (let key in this.portfolio.person.others) {
-      this.personOthers.push({
-        key: key,
-        value: this.portfolio.person.others[key]
-      });
+          for (let key in this.portfolio.person.others) {
+            this.personOthers.push({
+              key: key,
+              value: this.portfolio.person.others[key]
+            });
+          }
+
+          return of(this.portfolio);
+        })
+      );
+    } else {
+      return of(this.portfolio);
     }
   }
 
-  public getSkills(skillType: string) {
-    return this.skills[skillType];
+  public getSkills() {
+    return this.skills;
   }
 
-  private computeSkills(skillType: string) {
+  private computeSkills() {
     let skillMap: { [key: string]: Skill } = {};
 
     for (let project of this.portfolio.projects) {
-      for (let skill of project[skillType]) {
-        let name = skill;
-        if (skill.name) {
-          name = skill.name;
+      let skills: any[] = project.skills.slice();
+
+      for (let skill of skills) {
+        let skillType: boolean = typeof skill != "string";
+        let name = skillType ? skill.name : skill;
+
+        if (!skillType) {
+          project.skills.splice(project.skills.indexOf(name), 1);
+          project.skills.push(new Skill(name, 0, 0));
         }
+
         if (!skillMap[name]) {
           skillMap[name] = new Skill(name, 0, 0);
         }
+
         skillMap[name].count++;
         skillMap[name].months += this.getProjectDurationInMonth(project);
         skillMap[name].lastJob = this.maxDate(skillMap[name].lastJob, project);
       }
     }
+
     return skillMap;
   }
 
@@ -87,63 +108,16 @@ export class PortfolioService {
     return lastDate;
   }
 
-  public portfolio = {
-    person: {
-      name: "Alan Greenberg",
-      foto: "assets/images/avatar/avatar-white.png",
-      motto: "Unus pro omnibus, omnes pro uno",
-      others: {
-        dob: "1972-02-30 in Santiago de Cuba",
-        "civil status": "single",
-        languages: "English, Spanish, Chinese"
-      }
-    },
-    projects: [
-      {
-        name: "One project that I was done",
-        description:
-          "Lorem <b>ipsum</b> dolor <i>sit amet</i>, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        fromDate: "2017-02-01",
-        toDate: "2018-04-15",
-        languages: [{ name: "java", version: "1.8" }, "html", "sql"],
-        frameworks: ["spring", { name: "spring boot", version: "1" }],
-        tools: [
-          "eclipse",
-          "dbeaver",
-          "jira",
-          "bitbucket",
-          "git",
-          "jenkins",
-          "mvn",
-          "mysql"
-        ]
-      },
-      {
-        name: "Second project that I was done too",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        fromDate: "2018-03-01",
-        toDate: "2018-03-31",
-        languages: ["java", "html", "sql"],
-        frameworks: ["spring"],
-        tools: ["eclipse", "dbeaver", "svn", "jenkins", "ant", "oracle"]
-      },
-      {
-        name: "33333 project that I was done too",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        fromDate: "2011-11-01",
-        toDate: "2017-01-31",
-        languages: [{ name: "java", version: "1.6" }, "groovy"],
-        frameworks: ["struts"],
-        tools: ["eclipse", "svn", "jenkins", "gradle", "oracle"]
-      }
-    ],
-    others: {
-      Hobby: "<ul><li>First hobby</li><li>Second hobby</li></ul>",
-      Certificates:
-        "<ul><li>First certificate</li><li>Second certificate</li></ul>"
-    },
-    copyright: "Greenberg 2018"
-  };
+  public getMessages(): Observable<any> {
+    if (!this.messages) {
+      return this.http.get("messages.json").pipe(
+        mergeMap(data => {
+          this.messages = data;
+          return of(this.messages);
+        })
+      );
+    } else {
+      return of(this.messages);
+    }
+  }
 }

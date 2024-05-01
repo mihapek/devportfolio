@@ -1,0 +1,54 @@
+@import "black-and-white.scss";
+
+@mixin bg-strike($color) {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .section-name {
+    position: relative;
+    display: inline-block;
+
+    &:before,
+    &:after {
+      content: "-----------------------------------";
+      position: absolute;
+    }
+
+    &:before {
+      right: 100%;
+      margin-right: 15px;
+    }
+
+    &:after {
+      left: 100%;
+      margin-left: 15px;
+    }
+  }
+}
+
+.nerd {
+  @include black-and-white(#fff, #f1f1f2, #63646d, #7d7e86, #cfd0d5, #ff0000, #2a2938, #2a2938, #2a2938, "courier", "courier");
+
+  .decoration {
+    display: none;
+  }
+  .person-data {
+    .person-name {
+      font-size: 45px;
+    }
+  }
+  .filtered-skills {
+    .skill-card {
+      .mat-card {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .main-section {
+    @include bg-strike(black);
+    color: black;
+  }
+}

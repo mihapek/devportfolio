@@ -1,0 +1,4 @@
+@import "black-and-white.scss";
+.black {
+  @include black-and-white(#343541, #42434e, #63646d, #7d7e86, #6d6d76, #ff0000, #fff, #c3c3c5, #ececff, "Sree Krushnadevaraya", "Montserrat");
+}

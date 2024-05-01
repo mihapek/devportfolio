@@ -9,11 +9,9 @@ import { Project } from "./project.structure";
 export class ProjectComponent {
   @Input() project: Project;
 
-  constructor() {
-    console.log("Load ProjectComponent");
-  }
+  constructor() {}
 
-  private getDuration() {
+  getDuration() {
     if (this.project.fromDate) {
       let fromDate = Date.parse(this.project.fromDate);
       let toDate = Date.now();
@@ -23,20 +21,13 @@ export class ProjectComponent {
       let timeDiff = Math.abs(toDate - fromDate);
       let diffMonths = Math.ceil(timeDiff / (1000 * 3600 * 24 * 30));
 
-      return (
-        this.formatDate(fromDate) +
-        " - " +
-        (this.project.toDate ? this.formatDate(toDate) : "now") +
-        " (" +
-        diffMonths +
-        " months)"
-      );
+      return this.formatDate(fromDate) + " - " + (this.project.toDate ? this.formatDate(toDate) : "now") + " (" + diffMonths + ")";
     } else {
       return "---";
     }
   }
 
-  private formatDate(timems: number) {
+  formatDate(timems: number) {
     const date = new Date(timems);
     return date.getFullYear() + "/" + (date.getMonth() + 1);
   }
